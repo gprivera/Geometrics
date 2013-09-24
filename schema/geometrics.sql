@@ -34,7 +34,7 @@ CREATE TABLE `airports`(
 	`id` int unsigned not null auto_increment primary key,
 	`code_id` varchar(15),
 	`identification` varchar(10),
-	`type` varchar(45),
+	`airway_type_id` varchar(45),
 	`name` varchar(100),
 	`latitude` varchar(15),
 	`longitude` varchar(15),
@@ -43,10 +43,24 @@ CREATE TABLE `airports`(
 	`country_id` int unsigned,
 	`region_id` int unsigned,
 	`municipality` varchar(45),
+	`scheduled_service_id` int not null,
 	`gps_code` varchar(10),
 	`iata_code` varchar(5),
 	`local_code` varchar(5)
 	);
+
+DROP TABLE IF EXISTS `airway_types`;
+CREATE TABLE `airway_types`(
+	`id` int unsigned not null auto_increment primary key,
+	`type` varchar(255) not null
+);
+
+DROP TABLE IF EXISTS `scheduled_services`
+CREATE TABLE `scheduled_services`(
+	`id` int unsigned not null auto_increment primary key,
+	`value` varchar(5) not null
+);
+
 
 DROP TABLE IF EXISTS `airport_frequencies`;
 CREATE TABLE `airport_frequencies`(
