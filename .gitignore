@@ -52,4 +52,6 @@ local.properties
 # PDT-specific
 .buildpath
 
-#!! ERROR: Sublimetext is undefined. Use list command to see defined gitignore types !!#
+### SublimeText ###
+# SublimeText project files
+*.sublime-workspace
