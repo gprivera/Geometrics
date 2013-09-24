@@ -12,7 +12,7 @@ CREATE TABLE `continents`(
 DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries`(
 	`id` int unsigned not null auto_increment primary key,
-	`code_id` varchar(15),
+	`serial` varchar(15),
 	`name` varchar(100),
 	`code` varchar(2),
 	`continent_id` int unsigned
@@ -21,7 +21,7 @@ CREATE TABLE `countries`(
 DROP TABLE IF EXISTS `regions`;
 CREATE TABLE `regions`(
 	`id` int unsigned not null auto_increment primary key,
-	`code_id` varchar(15),
+	`serial` varchar(15),
 	`code` varchar(10),
 	`local_code` varchar(10),
 	`name` varchar(100),
@@ -32,7 +32,7 @@ CREATE TABLE `regions`(
 DROP TABLE IF EXISTS `airports`;
 CREATE TABLE `airports`(
 	`id` int unsigned not null auto_increment primary key,
-	`code_id` varchar(15),
+	`serial` varchar(15),
 	`identification` varchar(10),
 	`airway_type_id` varchar(45),
 	`name` varchar(100),
@@ -65,7 +65,7 @@ CREATE TABLE `scheduled_services`(
 DROP TABLE IF EXISTS `airport_frequencies`;
 CREATE TABLE `airport_frequencies`(
 	`id` int unsigned not null auto_increment primary key,
-	`code_id` varchar(15),
+	`serial` varchar(15),
 	`airport_id` int unsigned,
 	`identification` varchar(10),
 	`type` varchar(45),
